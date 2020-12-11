@@ -6,6 +6,9 @@ import repositories.merchant_repository as merchant_repository
 from models.tag import Tag
 import repositories.tag_repository as tag_repository
 
+from models.transaction import Transaction
+import repositories.transaction_repository as transaction_repository
+
 
 merchant_repository.delete_all()
 tag_repository.delete_all()
@@ -30,6 +33,9 @@ tag_repository.save(tag_3)
 
 tag_4 = Tag("Bills")
 tag_repository.save(tag_4)
+
+transaction_1 = Transaction("Bought groceries from Tesco", 50, merchant_1, tag_1)
+transaction_repository.save(transaction_1)
 
 
 pdb.set_trace()
