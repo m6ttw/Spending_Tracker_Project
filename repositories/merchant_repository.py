@@ -20,7 +20,7 @@ def select_all():
 
 
 def select(id):
-    sql = "SELECT * FROM humans WHERE id = %s"
+    sql = "SELECT * FROM merchants WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
     merchant = Merchant(result["name"], result["id"])
