@@ -7,6 +7,9 @@ import repositories.tag_repository as tag_repository
 from models.transaction import Transaction
 import repositories.transaction_repository as transaction_repository
 
+merchant_repository.delete_all()
+tag_repository.delete_all()
+transaction_repository.delete_all()
 
 merchant_1 = Merchant("Asda")
 merchant_repository.save(merchant_1)
@@ -15,7 +18,7 @@ merchant_repository.save(merchant_2)
 merchant_3 = Merchant("Adidas")
 merchant_repository.save(merchant_3)
 
-tag_1 = Tag("Bills")
+tag_1 = Tag("Finances")
 tag_repository.save(tag_1)
 tag_2 = Tag("Groceries")
 tag_repository.save(tag_2)
@@ -38,9 +41,7 @@ transaction_repository.select_all()
 merchant_1.name = "Tesco"
 merchant_repository.update(merchant_1)
 
-tag_1.category = "Finances"
+tag_1.category = "Bills"
 tag_repository.update(tag_1)
 
-# merchant_repository.delete_all()
-# tag_repository.delete_all()
-# transaction_repository.delete_all()
+
