@@ -6,11 +6,7 @@ from models.transaction import Transaction
 
 class TestTransaction(unittest.TestCase):
     def setUp(self):
-        self.transaction_1 = Transaction("Bought food from Tesco", 50, "Tesco", "Groceries")
-
-
-    def test_transaction_has_description(self):
-        self.assertEqual("Bought food from Tesco", self.transaction_1.description)
+        self.transaction_1 = Transaction(50, "Tesco", "Groceries")
 
 
     def test_transaction_has_amount(self):

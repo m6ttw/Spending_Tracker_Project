@@ -1,7 +1,6 @@
 class Transaction():
 
-    def __init__(self, description, amount, merchant, tag, id=None):
-        self.description = description
+    def __init__(self, amount, merchant, tag, id=None):
         self.amount = amount
         self.merchant = merchant
         self.tag = tag

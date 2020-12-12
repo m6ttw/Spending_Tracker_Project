@@ -32,9 +32,9 @@ tag_repository.save(tag_6)
 tag_7 = Tag("Transport")
 tag_repository.save(tag_7)
 
-transaction_1 = Transaction("Bought groceries from Asda", 50, merchant_1, tag_4)
+transaction_1 = Transaction(50, merchant_1, tag_4)
 transaction_repository.save(transaction_1)
-transaction_2 = Transaction("New trainers from Adidas", 65, merchant_3, tag_6)
+transaction_2 = Transaction(65, merchant_3, tag_6)
 transaction_repository.save(transaction_2)
 
 
@@ -48,6 +48,9 @@ merchant_repository.update(merchant_1)
 
 tag_1.category = "Bills"
 tag_repository.update(tag_1)
+
+transaction_1.amount = 40
+transaction_repository.update(transaction_1)
 
 
 merchant_repository.delete_all()
