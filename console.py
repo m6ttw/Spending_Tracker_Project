@@ -27,6 +27,7 @@ transaction_repository.save(transaction_1)
 transaction_2 = Transaction(65, merchant_3, tag_3)
 transaction_repository.save(transaction_2)
 transaction_3 = Transaction(20, merchant_2, tag_1)
+transaction_repository.save(transaction_3)
 
 
 merchant_repository.select_all()
@@ -40,6 +41,6 @@ merchant_repository.update(merchant_1)
 tag_1.category = "Finances"
 tag_repository.update(tag_1)
 
-merchant_repository.delete_all()
-tag_repository.delete_all()
-transaction_repository.delete_all()
+# merchant_repository.delete_all()
+# tag_repository.delete_all()
+# transaction_repository.delete_all()
