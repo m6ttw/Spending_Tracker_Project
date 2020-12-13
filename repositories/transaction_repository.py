@@ -10,16 +10,29 @@ def save(transaction):
     sql = "INSERT INTO transactions (amount, merchant_id, tag_id) VALUES (%s, %s, %s) RETURNING id"
     values = [transaction.amount, transaction.merchant.id, transaction.tag.id]
     results = run_sql(sql, values)
-    transaction.id = results[0]['id']
-    return transaction
+    id = results[0]['id']
+    transaction.id = id
+
+
+# def select_all():
+#     transactions = []
+#     sql = "SELECT * FROM transactions"
+#     results = run_sql(sql)
+#     for row in results:
+#         transaction = Transaction(row['amount'], row['merchant_id'], row['tag_id'], row['id'] )
+#         transactions.append(transaction)
+#     return transactions
 
 
 def select_all():
     transactions = []
     sql = "SELECT * FROM transactions"
     results = run_sql(sql)
-    for row in results:
-        transaction = Transaction(row['amount'], row['merchant_id'], row['tag_id'], row['id'] )
+    for result in results:
+        amount = int(result["amount"])
+        merchant = merchant_repository.select(result["merchant_id"])
+        tag = tag_repository.select(result["tag_id"])
+        transaction = Transaction(amount, merchant, tag, result["id"])
         transactions.append(transaction)
     return transactions
 
