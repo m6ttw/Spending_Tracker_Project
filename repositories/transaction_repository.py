@@ -29,7 +29,7 @@ def select_all():
     sql = "SELECT * FROM transactions"
     results = run_sql(sql)
     for result in results:
-        amount = int(result["amount"])
+        amount = float(result["amount"])
         merchant = merchant_repository.select(result["merchant_id"])
         tag = tag_repository.select(result["tag_id"])
         transaction = Transaction(amount, merchant, tag, result["id"])
