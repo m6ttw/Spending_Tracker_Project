@@ -47,7 +47,9 @@ def update(transaction):
 def total():
     sql = "SELECT SUM(amount) FROM transactions"
     total = run_sql(sql)
-    return total
+    for amounts in total:
+        for amount in amounts:
+            return amount
 
 
 def delete_all():
