@@ -14,16 +14,6 @@ def save(transaction):
     transaction.id = id
 
 
-# def select_all():
-#     transactions = []
-#     sql = "SELECT * FROM transactions"
-#     results = run_sql(sql)
-#     for row in results:
-#         transaction = Transaction(row['amount'], row['merchant_id'], row['tag_id'], row['id'] )
-#         transactions.append(transaction)
-#     return transactions
-
-
 def select_all():
     transactions = []
     sql = "SELECT * FROM transactions"
@@ -35,6 +25,7 @@ def select_all():
         transaction = Transaction(amount, merchant, tag, result["id"])
         transactions.append(transaction)
     return transactions
+
 
 def select(id):
     transaction = None
@@ -53,9 +44,16 @@ def update(transaction):
     run_sql(sql, values)
 
 
+def total():
+    sql = "SELECT SUM(amount) FROM transactions"
+    total = run_sql(sql)
+    return total
+
+
 def delete_all():
     sql = "DELETE FROM transactions"
     run_sql(sql)
+
 
 def delete(id):
     sql = "DELETE FROM transactions WHERE id = %s"
