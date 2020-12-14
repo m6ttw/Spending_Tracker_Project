@@ -6,11 +6,13 @@
 {% for transaction in transactions %}
 
 <section>
-    <p>Spent £{{ transaction.amount }} at {{ transaction.merchant.name }}. Tag: {{ transaction.tag.category }}</p>
+    <p><b>£{{ transaction.amount }}</b> at <b>{{ transaction.merchant.name }}</b>. Tag: <b>{{ transaction.tag.category }}</b> Time: {{ created_at }}</p>
 </section>
 
 {% endfor %}
 
-<p>Total spend: £{{ total }}</p>
+<section>
+    <p>Total spend: <b>£{{ total }}</b></p>
+</section>
 
 {% endblock %}
