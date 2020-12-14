@@ -9,6 +9,7 @@
             <input type="number" required name="amount" min="0" value="0" step=".01">
         </label>
     </div>
+    <br>
     <div>
         <label for="merchant">Recipient:</label>
         <select name="merchant_id" id="merchant">
@@ -19,6 +20,7 @@
             {% endfor %}
         </select>
     </div>
+    <br>
     <div>
         <label for="tag">Tag:</label>
         <select name="tag_id" id="tag">
@@ -29,8 +31,9 @@
             {% endfor %}
         </select>
     </div>
+    <br>
     <div>
-        <input type="submit">
+        <input type="submit" name="name" value="Add Transaction" >
     </div>
 </form>
 
