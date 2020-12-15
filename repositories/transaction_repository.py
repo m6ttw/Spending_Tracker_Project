@@ -24,6 +24,7 @@ def select_all():
         tag = tag_repository.select(result["tag_id"])
         transaction = Transaction(amount, merchant, tag, result["id"])
         transactions.append(transaction)
+        transactions.reverse()
     return transactions
 
 
