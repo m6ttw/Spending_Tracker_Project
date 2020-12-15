@@ -5,6 +5,28 @@ body {
     background-attachment: fixed
 }
 
+body > header > nav > ul {
+    display: flex;
+    background-color: rgb(168, 218, 220)
+}
+
+body > h3 {
+    display: inline-block;
+}
+
+.container {
+    align-content: center;
+    display: inline-block;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    background-color:rgb(168, 218, 220)
+}
+
+.container > section > ul > li {
+    display: inline-block;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    background-color:rgb(241, 250, 238)
+}
+
 /* h1 {
     text-align: center;
     background-color:rgb(29, 53, 87);
@@ -31,7 +53,4 @@ a:visited {
     background-color:rgb(29, 53, 87);
     color:rgb(168, 218, 220);
 }
-
-.container > h2 {
-    color:rgb(241, 250, 238)
-} */
+ */
