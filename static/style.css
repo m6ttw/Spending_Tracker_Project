@@ -1,3 +1,11 @@
+body > header > h1 {
+    background-color: rgb(249, 236, 228);
+    color:rgb(101, 91, 100);
+    display: inline-block;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    border-radius: 10px
+}
+
 body {
     background-image: url("/static/images/leo-money.jpg");
     background-size: cover;
@@ -6,51 +14,28 @@ body {
 }
 
 body > header > nav > ul {
-    display: flex;
-    background-color: rgb(168, 218, 220)
+    display: inline-block;
+    padding: 1em 1em 1em 1em;
+    list-style: none;
+    background-color: rgb(150, 136, 123);
+    color: rgb(247, 235, 213);
+    border-radius: 10px
 }
 
 body > h3 {
     display: inline-block;
+    padding: 1em 1em 1em 1em
 }
 
 .container {
     align-content: center;
     display: inline-block;
-    padding: 0.5em 0.5em 0.5em 0.5em;
-    background-color:rgb(168, 218, 220)
+    padding: 0.1em 1.5em 0.1em 1.5em;
+    background-color:rgb(247, 235, 213);
+    color:rgb(150, 136, 123);
+    border-radius: 10px
 }
 
 .container > section > ul > li {
     display: inline-block;
-    padding: 0.5em 0.5em 0.5em 0.5em;
-    background-color:rgb(241, 250, 238)
 }
-
-/* h1 {
-    text-align: center;
-    background-color:rgb(29, 53, 87);
-    color: rgb(230, 57, 70)
-}
-
-ul {
-    background-color:rgb(29, 53, 87);
-    color:rgb(241, 250, 238);
-    list-style-type: square
-}
-
-a:link{
-    color:rgb(244, 140, 6)
-}
-
-a:visited {
-    color:rgb(106, 4, 15)
-}
-
-.container {
-    display: grid;
-    text-align: center;
-    background-color:rgb(29, 53, 87);
-    color:rgb(168, 218, 220);
-}
- */
