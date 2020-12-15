@@ -10,7 +10,7 @@
 {% for transaction in transactions %}
 
 <section>
-    <p>Time: {{ created_at }}<br><b>£{{ transaction.amount }}</b> at <b>{{ transaction.merchant.name }}</b><br>{{ transaction.tag.category }}</p>
+    <p><b>£{{ transaction.amount }}</b> at <b>{{ transaction.merchant.name }}</b><br>{{ transaction.tag.category }}<br>Time: {{ created_at }}</p>
 </section>
 
 {% endfor %}
