@@ -10,8 +10,10 @@ def save(transaction):
     sql = "INSERT INTO transactions (amount, merchant_id, tag_id) VALUES (%s, %s, %s) RETURNING id"
     values = [transaction.amount, transaction.merchant.id, transaction.tag.id]
     results = run_sql(sql, values)
-    id = results[0]['id']
+    id = results[0]["id"]
     transaction.id = id
+    # time_created = results[0]["time_created"]
+    # transaction.time_created = time_created
 
 
 def select_all():
@@ -22,7 +24,7 @@ def select_all():
         amount = float(result["amount"])
         merchant = merchant_repository.select(result["merchant_id"])
         tag = tag_repository.select(result["tag_id"])
-        transaction = Transaction(amount, merchant, tag, result["id"])
+        transaction = Transaction(amount, merchant, tag, result["id"], result["time_created"])
         transactions.append(transaction)
         transactions.reverse()
     return transactions
@@ -35,13 +37,13 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        transaction = Transaction(result['amount'], result['merchant_id'], result['tag_id'], result['id'] )
+        transaction = Transaction(result["amount"], result["merchant_id"], result["tag_id"], result["id"], result["time_created"])
     return transaction
 
 
 def update(transaction):
     sql = "UPDATE transactions SET (amount, merchant_id, tag_id) = (%s, %s, %s) WHERE id = %s"
-    values = [transaction.amount, transaction.merchant.id, transaction.tag.id, transaction.id]
+    values = [transaction.amount, transaction.merchant.id, transaction.tag.id, transaction.id, transaction.time_created]
     run_sql(sql, values)
 
 

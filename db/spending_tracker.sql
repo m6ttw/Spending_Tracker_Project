@@ -17,5 +17,5 @@ CREATE TABLE transactions (
     amount DECIMAL,
     merchant_id INT REFERENCES merchants(id),
     tag_id INT REFERENCES tags(id),
-    created_at timestamp default current_timestamp
+    time_created timestamp default current_timestamp
 );

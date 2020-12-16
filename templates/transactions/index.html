@@ -11,7 +11,7 @@
 
 <section>
     <ul>
-        <li><b>£{{ transaction.amount }}</b> at <b>{{ transaction.merchant.name }}</b><br>{{ transaction.tag.category }}<br>Time: {{ created_at }}</li>
+        <li><b>£{{ transaction.amount }}</b> at <b>{{ transaction.merchant.name }}</b><br>{{ transaction.tag.category }}<br>Time: {{ transaction.time_created }}</li>
     </ul>
 </section>
 
