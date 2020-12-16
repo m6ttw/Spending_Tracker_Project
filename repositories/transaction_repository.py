@@ -61,3 +61,4 @@ def delete(id):
     sql = "DELETE FROM transactions WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+    
