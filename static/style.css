@@ -39,3 +39,11 @@ body > h3 {
 .container > section > ul > li {
     display: inline-block;
 }
+
+a:link {
+    color:rgb(30, 245, 10)
+}
+
+a:visited {
+    color:rgb(101, 91, 100)
+}

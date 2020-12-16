@@ -12,9 +12,6 @@ def save(transaction):
     results = run_sql(sql, values)
     id = results[0]["id"]
     transaction.id = id
-    # time_created = results[0]["time_created"]
-    # transaction.time_created = time_created
-
 
 def select_all():
     transactions = []
